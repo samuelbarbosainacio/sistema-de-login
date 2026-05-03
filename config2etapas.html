@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar 2FA</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="header">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.PBvNGgUOQE2NLr8KnneGvAHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                     alt="Logo" class="logo">
+                <h1>Verificação em Duas Etapas</h1>
+                <p class="subtitle">Escolha como deseja receber o código</p>
+            </div>
+
+            <form action="/config2fa" method="post">
+                <div class="input-group">
+                    <label for="method">Método de verificação</label>
+                    <select id="method" name="method" required>
+                        <option value="">Selecione...</option>
+                        <option value="email">📧 E-mail (Gmail)</option>
+                        <option value="sms">📱 SMS (Celular)</option>
+                    </select>
+                </div>
+
+                <div id="email-field" class="input-group hidden">
+                    <label for="email">Seu E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@gmail.com">
+                </div>
+
+                <div id="phone-field" class="input-group hidden">
+                    <label for="phone">Seu Celular</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+55 (XX) XXXXX-XXXX">
+                </div>
+
+                <button type="submit" class="btn-login">Ativar Verificação</button>
+            </form>
+
+            <div class="footer-links">
+                <a href="login.html" class="back">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const method = document.getElementById('method');
+        const emailField = document.getElementById('email-field');
+        const phoneField = document.getElementById('phone-field');
+
+        method.addEventListener('change', () => {
+            emailField.classList.add('hidden');
+            phoneField.classList.add('hidden');
+            if (method.value === 'email') emailField.classList.remove('hidden');
+            if (method.value === 'sms') phoneField.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

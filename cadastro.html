@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="header">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.PBvNGgUOQE2NLr8KnneGvAHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                     alt="Logo" class="logo">
+                <h1>Criar Conta</h1>
+            </div>
+
+            <form id="cadastroForm">
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="nationality">Nacionalidade</label>
+                    <select id="nationality" required>
+                        <option value="">Selecione seu país</option>
+                        <option value="BR">🇧🇷 Brasil</option>
+                        <option value="PT">🇵🇹 Portugal</option>
+                        <option value="AO">🇦🇴 Angola</option>
+                        <option value="US">🇺🇸 Estados Unidos</option>
+                        <option value="ES">🇪🇸 Espanha</option>
+                        <option value="AR">🇦🇷 Argentina</option>
+                        <option value="MX">🇲🇽 México</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Celular</label>
+                    <input type="tel" id="phone" placeholder="+55 (XX) XXXXX-XXXX">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <button type="submit" class="btn-login">Cadastrar</button>
+            </form>
+
+            <div class="footer-links">
+                <p>Já tem conta? <a href="login.html" style="color:white;">Faça Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede envio real do formulário
+            
+            // Aqui você pode adicionar validações simples se quiser
+            
+            // Redireciona direto para a configuração de 2FA
+            window.location.href = "config2etapas.html";
+        });
+    </script>
+</body>
+</html>

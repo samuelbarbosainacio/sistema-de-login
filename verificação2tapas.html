@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação em Duas Etapas</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="header">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.PBvNGgUOQE2NLr8KnneGvAHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                     alt="Logo" class="logo">
+                <h1>Verificação em Duas Etapas</h1>
+                <p class="subtitle">Digite o código de 6 dígitos enviado para seu e-mail ou celular.</p>
+            </div>
+
+            <form id="verifyForm">
+                <div class="input-group">
+                    <label for="code">Código de verificação</label>
+                    <input type="text" id="code" maxlength="6" 
+                           placeholder="000000" 
+                           style="text-align: center; font-size: 1.9rem; letter-spacing: 12px; font-weight: 600;" 
+                           required autofocus>
+                </div>
+
+                <button type="submit" class="btn-login">Confirmar Código</button>
+            </form>
+
+            <div class="footer-links">
+                <a href="#" id="resend" class="forgot">Reenviar código</a>
+                <a href="login.html" class="back">← Voltar ao Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('verifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const code = document.getElementById('code').value;
+
+            if (code.length === 6) {
+                alert("✅ Verificação realizada com sucesso!\n\nBem-vindo ao sistema.");
+                // Aqui você redireciona para a página principal do sistema
+                // window.location.href = "dashboard.html";
+            } else {
+                alert("Código inválido. Digite 6 números.");
+            }
+        });
+
+        // Reenviar código (simulado)
+        document.getElementById('resend').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert("✅ Código reenviado!");
+        });
+    </script>
+</body>
+</html>

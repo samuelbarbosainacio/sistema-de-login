@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #7b88e7 0%, #a265b8 100%);
+    overflow: hidden; /* Evita qualquer rolagem acidental */
+}
+
+.container {
+    width: 90%;
+    /* Aumentei a largura de 400px para 550px */
+    max-width: 550px; 
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px 50px; /* Padding generoso nas laterais */
+    border-radius: 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+}
+
+.avatar-container {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    width: 80%;
+    height: auto;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+/* Coloca dois inputs lado a lado para economizar espaÃ§o vertical */
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+
+.input-group {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    margin-left: 8px;
+    color: #f8f8f8;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: none;
+    background-color: #f4f4f9;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.btn-entrar {
+    width: 100%;
+    padding: 14px;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(to right, #5c7cfa, #9c6ade);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-entrar:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+.footer-links {
+    margin-top: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
