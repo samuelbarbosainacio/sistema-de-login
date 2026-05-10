@@ -14,6 +14,9 @@
                      alt="Logo" class="logo">
                 <h1>Verificação em Duas Etapas</h1>
                 <p class="subtitle">Digite o código de 6 dígitos enviado para seu e-mail ou celular.</p>
+                <p style="color: #ffd700; font-size: 0.9rem; margin-top: 10px;">
+                    <strong>Código para teste: 123456</strong>
+                </p>
             </div>
 
             <form id="verifyForm">
@@ -36,13 +39,19 @@
     </div>
 
     <script>
+        const CODIGO_CORRETO = "123456";   // ← Código específico para teste
+
         function confirmarCodigo() {
             const code = document.getElementById('code').value.trim();
 
-            if (code.length === 6) {
+            if (code === CODIGO_CORRETO) {
                 alert("✅ Verificação realizada com sucesso!\n\nBem-vindo ao sistema.");
                 window.location.href = "paginainicial.html";
-            } else {
+            } 
+            else if (code.length === 6) {
+                alert("❌ Código inválido!\n\nO código correto para teste é: 123456");
+            } 
+            else {
                 alert("Código inválido. Digite 6 números.");
             }
         }
@@ -50,7 +59,7 @@
         // Reenviar código
         document.getElementById('resend').addEventListener('click', function(e) {
             e.preventDefault();
-            alert("✅ Código reenviado para seu email/celular!");
+            alert("✅ Código reenviado!\n\nCódigo para teste: 123456");
         });
     </script>
 </body>
